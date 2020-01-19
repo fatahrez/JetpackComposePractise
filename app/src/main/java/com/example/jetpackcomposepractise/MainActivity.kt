@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.compose.Composable
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
+import androidx.ui.material.MaterialTheme
+import androidx.ui.tooling.preview.Preview
 
 class MainActivity : AppCompatActivity() {
 //    Tutorial on https://developer.android.com/jetpack/compose/tutorial
@@ -19,7 +21,9 @@ class MainActivity : AppCompatActivity() {
 //      Composable functions can only be called from within the scope of other composable functions.
         setContent{
 //            Text("Hello compose")
-            Greeting("Android")
+            MaterialTheme {
+                Greeting("Android")
+            }
         }
     }
 
@@ -27,5 +31,14 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun Greeting (name: String) {
         Text(text = "Hello $name")
+    }
+
+//    Use @Preview to view the UI in android studio
+    @Preview
+    @Composable
+    fun DefaultPreview() {
+        MaterialTheme() {
+            Greeting("Fatah")
+        }
     }
 }
