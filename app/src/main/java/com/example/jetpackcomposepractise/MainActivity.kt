@@ -7,6 +7,7 @@ import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 //    Tutorial on https://developer.android.com/jetpack/compose/tutorial
@@ -21,24 +22,41 @@ class MainActivity : AppCompatActivity() {
 //      Composable functions can only be called from within the scope of other composable functions.
         setContent{
 //            Text("Hello compose")
-            MaterialTheme {
-                Greeting("Android")
-            }
+//            MaterialTheme {
+//                Greeting("Android")
+//            }
+            NewsStory()
         }
     }
 
-//    To make a Composable, add the @Composable annotation and then define the function which is passed as a name
+    //    To make a Composable, add the @Composable annotation and then define the function which is passed as a name
     @Composable
     fun Greeting (name: String) {
         Text(text = "Hello $name")
     }
 
 //    Use @Preview to view the UI in android studio
+//    @Preview
+//    @Composable
+//    fun DefaultPreview() {
+//        MaterialTheme() {
+//            Greeting("Fatah")
+//        }
+//    }
+
+//    Layouts
+//    UI elements are hierarchical, with elements contained in other elements.
+//    In Compose you can build a UI hierarchy by calling composable functions from other composable functions
+    @Composable
+    fun NewsStory() {
+        Text("A day in Shark Fin Cove")
+        Text("Davenport, California")
+        Text("December 2018")
+    }
+
     @Preview
     @Composable
     fun DefaultPreview() {
-        MaterialTheme() {
-            Greeting("Fatah")
-        }
+        NewsStory()
     }
 }
