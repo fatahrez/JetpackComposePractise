@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.compose.Composable
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
+import androidx.ui.layout.Column
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
 import kotlin.random.Random
@@ -44,19 +45,23 @@ class MainActivity : AppCompatActivity() {
 //        }
 //    }
 
+}
+
 //    Layouts
 //    UI elements are hierarchical, with elements contained in other elements.
 //    In Compose you can build a UI hierarchy by calling composable functions from other composable functions
-    @Composable
-    fun NewsStory() {
+
+@Composable
+fun NewsStory() {
+    Column {
         Text("A day in Shark Fin Cove")
         Text("Davenport, California")
         Text("December 2018")
     }
+}
 
-    @Preview
-    @Composable
-    fun DefaultPreview() {
-        NewsStory()
-    }
+@Preview
+@Composable
+fun DefaultPreview() {
+    NewsStory()
 }
