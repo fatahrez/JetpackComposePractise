@@ -9,8 +9,7 @@ import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.DrawImage
 import androidx.ui.graphics.imageFromResource
-import androidx.ui.layout.Column
-import androidx.ui.layout.Spacing
+import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
 import androidx.ui.res.imageResource
 import androidx.ui.tooling.preview.Preview
@@ -64,7 +63,11 @@ fun NewsStory() {
 //        This acts as styling by passing parameters
         modifier = Spacing(16.dp)
     ) {
-        DrawImage(image)
+        Container(modifier = Height(180.dp) wraps Expanded) {
+            DrawImage(image)
+        }
+        
+        HeightSpacer(height = 16.dp)
 
         Text("A day in Shark Fin Cove")
         Text("Davenport, California")
