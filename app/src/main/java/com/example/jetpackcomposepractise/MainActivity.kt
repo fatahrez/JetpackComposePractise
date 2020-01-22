@@ -3,12 +3,16 @@ package com.example.jetpackcomposepractise
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.Composable
+import androidx.compose.unaryPlus
 import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
+import androidx.ui.foundation.DrawImage
+import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
 import androidx.ui.layout.Spacing
 import androidx.ui.material.MaterialTheme
+import androidx.ui.res.imageResource
 import androidx.ui.tooling.preview.Preview
 import kotlin.random.Random
 
@@ -55,9 +59,13 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun NewsStory() {
+    val image = +imageResource(R.drawable.orange)
     Column(
+//        This acts as styling by passing parameters
         modifier = Spacing(16.dp)
     ) {
+        DrawImage(image)
+
         Text("A day in Shark Fin Cove")
         Text("Davenport, California")
         Text("December 2018")
